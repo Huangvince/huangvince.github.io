@@ -2,14 +2,4 @@ _site
 .sass-cache
 .jekyll-metadata
 
-.idea/.name
-
-.idea/huangvince.github.io.iml
-
-.idea/misc.xml
-
-.idea/modules.xml
-
-.idea/vcs.xml
-
-.idea/workspace.xml
+.idea
