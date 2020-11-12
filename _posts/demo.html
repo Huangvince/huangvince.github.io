@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>demo</title>
+    <!-- <link rel="stylesheet" href="./index.css" /> -->
+    <!-- <link rel="stylesheet" href="./reste.css" /> -->
+  </head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: linear-gradient(to bottom, #171717, #494e73, #4e7290, #262f46);
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      margin-top: 10%;
+    }
+    #man {
+      width: 600px;
+      height: 600px;
+      list-style: none;
+      border-radius: 50%;
+      background: radial-gradient(#17aacf, #1de749, #bfff0e);
+      box-shadow: 0px 0px 20px indigo;
+    }
+
+    #man li {
+      position: absolute;
+      width: 100px;
+      height: 30px;
+      top: 50%;
+      left: 50%;
+      font-size: 18px;
+      transform-origin: left top;
+      text-align: center;
+      line-height: 30px;
+    }
+
+    #btnYes {
+      margin-top: 5%;
+      color: white;
+      width: 30%;
+      height: 44px;
+      background-color: rgb(0, 255, 213);
+      text-align: center;
+      border: none;
+      outline: none;
+      border-radius: 20px;
+      box-shadow: 2px 2px 5px black;
+    }
+
+    #img1 {
+      position: absolute;
+      width: 90px;
+      top: 45%;
+      left: 55%;
+    }
+
+    #img2 {
+      position: absolute;
+      width: 150px;
+      margin-top: 20%;
+      border-radius: 50%;
+      animation: img3move 1s infinite linear;
+      transform-origin: center center;
+    }
+
+    .people {
+      display: flex;
+      font-size: 60px;
+      color: red;
+    }
+
+    @keyframes img3move {
+      0% {
+        top: 50px;
+        width: 150px;
+      }
+      25% {
+        top: 55px;
+        width: 155px;
+      }
+      50% {
+        top: 60px;
+        width: 160px;
+        box-shadow: 0px 10px 10px black;
+      }
+      75% {
+        top: 55px;
+        width: 155px;
+      }
+      100% {
+        top: 50px;
+        width: 150px;
+      }
+    }
+    @media screen and (min-width: 1921px) {
+      #man li {
+        top: 52%;
+      }
+      #man.click li {
+        top: 50%;
+      }
+      #img1 {
+        width: 100px;
+        left: 57%;
+      }
+      #img2 {
+        margin-top: 18%;
+      }
+    }
+    @media screen and (min-width: 1780px) and (max-width: 1920px) {
+      #man li {
+        top: 46%;
+      }
+      #man.click li {
+        top: 50%;
+      }
+      #img1 {
+        width: 100px;
+        left: 56%;
+        top: 42%;
+      }
+      #img2 {
+        margin-top: 19%;
+      }
+    }
+
+    @media screen and (min-width: 1675px) and (max-width: 1779px) {
+      #man li {
+        top: 45%;
+      }
+    }
+
+    @media screen and (min-width: 1601px) and (max-width: 1674px) {
+      #man li {
+        top: 44%;
+      }
+    }
+
+    @media screen and (min-width: 1366px) and (max-height: 768px) {
+      .container {
+        margin-top: 6%;
+      }
+      #img2 {
+        margin-top: 17%;
+      }
+      #img1 {
+        left: 60%;
+      }
+    }
+  </style>
+  <body>
+    <div class="container">
+      <ul id="man">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+      <!-- <button id="btnYes" style="box-shadow: black 2px 2px 5px">开始</button> -->
+      <img id="img1" src="./timg.png" alt="" />
+      <img id="img2" src="./1.png" alt="" />
+      <div class="people">
+        <div class="title">中奖者：</div>
+        <div id="people"></div>
+      </div>
+    </div>
+    <!-- <script type="text/javascript" src="./index.js"></script> -->
+    <script>
+      var oliList = document.getElementsByTagName('li');
+      var people = document.getElementById('people');
+      var oman = document.getElementById('man');
+      // var obtnYes = document.getElementById('btnYes');
+      var img2 = document.getElementById('img2');
+      var names = [
+        '周丹',
+        '郑伟强',
+        '徐盼盼',
+        '黄沙扬',
+        '杨统兵',
+        '张诗瑶',
+        '吴胜',
+        '黄丽丹',
+        '肖洋',
+        '周大伟',
+        '胡静',
+        '郭朝霞',
+        '周阳',
+        '占发',
+        '汤恂烨',
+        '宋超',
+        '罗维君',
+        '郭伟强',
+        '林昊翊',
+        '郭泉禄',
+        '黄子鑫',
+        '张成龙',
+        '王齐',
+        '孟舒',
+        '廖继开',
+        '王飞明',
+        '银灼',
+        '肖扬',
+        '廖小松',
+        '徐晓波',
+        '苏永斌',
+        '叶如杰',
+        '赖阳俊',
+        '邓磊',
+        '田云平',
+        '张海山',
+        '李晓',
+        '游小龙',
+        '蒋丽梅',
+        '刘金娥',
+        '李小雪'
+      ];
+
+      var t = 0;
+      var odd = false;
+      //格式
+      function place() {
+        for (var i = 0; i < 41; i++) {
+          t = i * (360 / 41) + 'deg';
+          oliList[i].innerHTML = names[i];
+          oliList[i].style.transform = 'rotate(' + t + ') translate(210px)';
+        }
+      }
+      place();
+      function fun() {
+        var num = Math.floor(Math.random() * 41);
+        return num * (360 / 41) + 180;
+      }
+      var myDeg = 0;
+      img2.onmousedown = function () {
+        oman.className = 'click';
+        people.innerHTML = '';
+        myDeg = fun() + myDeg + 3600;
+        oman.style.transitionDuration = '8s';
+        img2.style.boxShadow = 'none';
+        console.log(myDeg);
+        var calDeg = myDeg;
+        var times = Math.floor(calDeg / 360);
+        var val = Math.abs(calDeg - 360 * (times + 1));
+        var a = Math.floor(val / (360 / 41));
+        var b = (a * 360) / 41;
+        var pe = b - val > 0 ? a - 1 : a;
+        setTimeout(() => {
+          people.innerHTML = names[pe];
+        }, 8000);
+        oman.style.transform = 'rotateZ(' + myDeg + 'deg)';
+      };
+      img2.onclick = function () {
+        img2.style.boxShadow = '2px 2px 5px black';
+      };
+    </script>
+  </body>
+</html>
