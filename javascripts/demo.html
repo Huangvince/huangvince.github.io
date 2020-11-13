@@ -225,7 +225,7 @@
       var oman = document.getElementById('man');
       // var obtnYes = document.getElementById('btnYes');
 			var img2 = document.getElementById('img2');
-			var img1 = document.getElementById('img1');
+// 			var img1 = document.getElementById('img1');
       var names = [
         '周丹',
         '郑伟强',
@@ -298,7 +298,7 @@
         var val = Math.abs(calDeg - 360 * (times + 1));
         var a = Math.floor(val / (360 / 41));
 				var b = (a * 360) / 41;
-				img1.style.transform = b.toFixed(4) - val.toFixed(4) > 0? 'rotate(3deg)' : 'rotate(-3deg)'
+// 				img1.style.transform = b.toFixed(4) - val.toFixed(4) > 0? 'rotate(3deg)' : 'rotate(-3deg)'
         var pe = b.toFixed(4) - val.toFixed(4) > 0 ? a - 1 : a;
         setTimeout(() => {
           people.innerHTML = names[pe];
