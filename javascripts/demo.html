@@ -47,6 +47,7 @@
       transform-origin: left top;
       text-align: center;
       line-height: 30px;
+      /* border: 1px solid; */
     }
 
     #btnYes {
@@ -273,7 +274,7 @@
       //格式
       function place() {
         for (var i = 0; i < 41; i++) {
-          t = i * (360 / 41) + 'deg';
+          t = i * (360 / 41).toFixed(4) + 'deg';
           oliList[i].innerHTML = names[i];
           oliList[i].style.transform = 'rotate(' + t + ') translate(210px)';
         }
@@ -281,7 +282,7 @@
       place();
       function fun() {
         var num = Math.floor(Math.random() * 41);
-        return num * (360 / 41) + 180;
+        return num * (360 / 41).toFixed(4) + 180;
       }
       var myDeg = 0;
       img2.onmousedown = function () {
@@ -296,7 +297,7 @@
         var val = Math.abs(calDeg - 360 * (times + 1));
         var a = Math.floor(val / (360 / 41));
         var b = (a * 360) / 41;
-        var pe = b - val > 0 ? a - 1 : a;
+        var pe = b.toFixed(4) - val.toFixed(4) > 0 ? a - 1 : a;
         setTimeout(() => {
           people.innerHTML = names[pe];
         }, 8000);
